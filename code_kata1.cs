@@ -151,3 +151,30 @@ public class Solution
         return answer;
     }
 }
+
+
+
+//자릿수 더하기
+//문제 설명
+//자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요.
+//예를들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다.
+
+//제한사항
+//N의 범위 : 100,000,000 이하의 자연수
+
+public class Solution
+{
+    public int solution(int n)
+    {
+        int answer = 0;
+        //정수 n을 String형으로 변환 후 CharArray로 변환
+        char[] arr = n.ToString().ToCharArray();
+
+        //반복문을 통해 각 해당 문자를 int형으로 바꾸어 answer에 더해줌.
+        foreach (char a in arr)
+        {
+            answer += System.Convert.ToInt32(a.ToString());
+        }
+        return answer;
+    }
+}
