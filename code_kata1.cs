@@ -154,32 +154,6 @@ public class Solution
 
 
 
-//자릿수 더하기
-//문제 설명
-//자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요.
-//예를들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다.
-
-//제한사항
-//N의 범위 : 100,000,000 이하의 자연수
-
-public class Solution
-{
-    public int solution(int n)
-    {
-        int answer = 0;
-        //정수 n을 String형으로 변환 후 CharArray로 변환
-        char[] arr = n.ToString().ToCharArray();
-
-        //반복문을 통해 각 해당 문자를 int형으로 바꾸어 answer에 더해줌.
-        foreach (char a in arr)
-        {
-            answer += System.Convert.ToInt32(a.ToString());
-        }
-        return answer;
-    }
-}
-
-
 
 
 // 짝수와 홀수
@@ -216,7 +190,7 @@ public class Solution
 
 
 
-//평균값 구하기
+//평균 구하기
 
 //문제 설명
 //정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요.
@@ -243,5 +217,61 @@ public class Solution
 
         //평균값 반환
         return answer;
+    }
+}
+
+
+
+//자릿수 더하기
+//문제 설명
+//자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요.
+//예를들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다.
+
+//제한사항
+//N의 범위 : 100,000,000 이하의 자연수
+
+public class Solution
+{
+    public int solution(int n)
+    {
+        int answer = 0;
+        //정수 n을 String형으로 변환 후 CharArray로 변환
+        char[] arr = n.ToString().ToCharArray();
+
+        //반복문을 통해 각 해당 문자를 int형으로 바꾸어 answer에 더해줌.
+        foreach (char a in arr)
+        {
+            answer += System.Convert.ToInt32(a.ToString());
+        }
+        return answer;
+    }
+}
+
+
+//약수의 합
+
+//문제 설명
+//정수 n을 입력받아 n의 약수를 모두 더한 값을 리턴하는 함수, solution을 완성해주세요.
+
+//제한 사항
+//n은 0 이상 3000이하인 정수입니다.
+
+public class Solution
+{
+    public int solution(int n)
+    {
+        int answer = 0;
+
+        // i가 1부터 n/2값이 될때까지 증가시키면서 for문 반복
+        for (int i = 1; i <= n / 2; i++)
+        {
+            if (n % i == 0)
+            {
+                // 나눠떨어지면 약수이므로 곧장 answer에 더해줌
+                answer += i;
+            }
+        }
+        // 마지막으로 자기자신 n을 더해주면서 리턴한다.
+        return answer + n;
     }
 }
