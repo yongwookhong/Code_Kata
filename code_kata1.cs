@@ -275,3 +275,34 @@ public class Solution
         return answer + n;
     }
 }
+
+
+//나머지가 1이 되는 수 찾기
+
+//문제 설명
+//자연수 n이 매개변수로 주어집니다. n을 x로 나눈 나머지가 1이 되도록 하는 가장 작은 자연수 x를 return 하도록 solution 함수를 완성해주세요. 답이 항상 존재함은 증명될 수 있습니다.
+
+//제한사항
+//3 ≤ n ≤ 1,000,000
+
+
+public class Solution
+{
+    public int solution(int n)
+    {
+        int answer = 0;  // 반환할 값을 저장하는 변수, 초기값은 0
+
+        // 2부터 n-1까지의 수를 반복
+        for (int x = 2; x < n; x++)
+        {
+            // n을 x로 나눈 나머지가 1인지 확인
+            if (n % x == 1)
+            {
+                answer = x;  // 나머지가 1이라면 answer에 현재의 수 x를 저장
+                break;      // 찾았으므로 반복문 종료
+            }
+        }
+
+        return answer;  // 찾은 값을 반환
+    }
+}
