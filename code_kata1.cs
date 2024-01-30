@@ -335,3 +335,40 @@ public class Solution
         return answer;
     }
 }
+
+// 자연수 뒤집어 배열로 만들기
+//문제 설명
+//자연수 n을 뒤집어 각 자리 숫자를 원소로 가지는 배열 형태로 리턴해주세요. 예를들어 n이 12345이면 [5,4,3,2,1] 을 리턴합니다.
+
+//제한 조건
+//n은 10,000,000,000이하인 자연수입니다.
+
+
+using System;
+using System.Linq;
+
+public class Solution
+{
+    // 입력된 정수 n의 각 자릿수를 배열로 반환하는 함수
+    public int[] solution(long n)
+    {
+        // 입력된 정수 n을 문자열로 변환하여 저장
+        string str = n.ToString();
+
+        // 반환될 정수 배열을 생성 (자릿수만큼의 크기)
+        int[] answer = new int[str.Length];
+
+        // 각 자릿수를 배열에 저장하는 반복문
+        for (int i = 0; i < str.Length; i++)
+        {
+            // 각 자릿수를 문자열로 변환하고 정수로 파싱하여 배열에 저장
+            answer[i] = int.Parse(str[i].ToString());
+        }
+
+        // 배열을 거꾸로 뒤집음
+        Array.Reverse(answer);
+
+        // 최종 결과를 반환
+        return answer;
+    }
+}
