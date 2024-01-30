@@ -372,3 +372,28 @@ public class Solution
         return answer;
     }
 }
+
+
+// 문자열을 정수로 바꾸기
+//문제 설명
+//문자열 s를 숫자로 변환한 결과를 반환하는 함수, solution을 완성하세요.
+
+//제한 조건
+//s의 길이는 1 이상 5이하입니다.
+//s의 맨앞에는 부호(+, -)가 올 수 있습니다.
+//s는 부호와 숫자로만 이루어져있습니다.
+//s는 "0"으로 시작하지 않습니다.
+
+
+public class Solution
+{
+    // 문자열을 정수로 변환하여 반환하는 함수
+    public int solution(string s)
+    {
+        // 문자열 s를 정수로 변환
+        int answer = int.Parse(s);
+
+        // 변환된 정수를 반환
+        return answer;
+    }
+}
