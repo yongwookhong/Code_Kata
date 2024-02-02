@@ -423,3 +423,43 @@ public class Solution
         return (x * x == n) ? (x + 1) * (x + 1) : -1;
     }
 }
+
+
+
+
+
+
+//정수 내림차순으로 배치하기
+
+// 문제 설명
+//함수 solution은 정수 n을 매개변수로 입력받습니다. n의 각 자릿수를 큰것부터 작은 순으로 정렬한 새로운 정수를 리턴해주세요. 예를들어 n이 118372면 873211을 리턴하면 됩니다.
+
+//제한 조건
+//n은 1이상 8000000000 이하인 자연수입니다.
+ 
+
+
+using System;
+using System.Linq;
+
+public class Solution
+{
+    // solution 함수 정의
+    public long solution(long n)
+    {
+        // 1. long 타입의 숫자를 문자열로 변환하고, 문자 배열로 변환
+        char[] arr = n.ToString().ToCharArray();
+
+        // 2. 문자 배열을 오름차순으로 정렬
+        Array.Sort(arr);
+
+        // 3. 정렬된 배열을 뒤집어서 내림차순으로 만듦
+        Array.Reverse(arr);
+
+        // 4. 문자 배열을 다시 문자열로 변환하고, 이를 long으로 변환
+        long answer = Convert.ToInt64(new string(arr));
+
+        // 5. 최종 결과 반환
+        return answer;
+    }
+}
