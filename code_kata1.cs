@@ -463,3 +463,40 @@ public class Solution
         return answer;
     }
 }
+
+
+
+//하샤드 수
+//문제 설명
+//양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나누어져야 합니다. 예를 들어 18의 자릿수 합은 1+8=9이고, 18은 9로 나누어 떨어지므로 18은 하샤드 수입니다. 자연수 x를 입력받아 x가 하샤드 수인지 아닌지 검사하는 함수, solution을 완성해주세요.
+
+//제한 조건
+//x는 1 이상, 10000 이하인 정수입니다.
+
+using System;
+
+public class Solution
+{
+    // 정수 x를 입력으로 받아 각 자리 숫자의 합으로 나누어지는지 확인하는 메서드
+    public bool solution(int x)
+    {
+        // 정수 x를 문자열로 변환한다. 왜냐하면 문자열로 변환하면 각 자릿수에 쉽게 접근할 수 있기 때문
+        string temp = x.ToString();
+        // 각 자릿수의 합을 저장할 변수
+        int sum = 0;
+        // 문자열을 순회하며 각 자리 숫자의 합을 계산
+        for (int i = 0; i < temp.Length; i++)
+        {
+            // Char.GetNumericValue 메서드를 사용하여 문자를 숫자로 변환하고 합산
+            // 여기서 중요한 개념은 'char'를 'int'로 변환하는 것이다. 예를 들어, '5'를 정수 5로 바꿈
+            sum += (int)Char.GetNumericValue(temp[i]);
+        }
+        // x가 자릿수 합으로 나눠떨어지면 참, 아니면 거짓
+        // 여기서 '?'는 "만약"이라는 의미
+        // x % sum == 0 이 참이면 true를, 그렇지 않으면 false를 answer 변수에 저장
+        bool answer = x % sum == 0 ? true : false;
+
+        // 최종 결과 반환
+        return answer;
+    }
+}
