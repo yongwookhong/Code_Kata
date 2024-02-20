@@ -575,3 +575,38 @@ public class Solution
             return -1; // 500번의 반복 후에도 결과를 찾지 못하면 -1을 반환
         }
     }
+
+
+
+    //서울에서 김서방 찾기
+    //    문제 설명
+    //String형 배열 seoul의 element중 "Kim"의 위치 x를 찾아, "김서방은 x에 있다"는 String을 반환하는 함수, solution을 완성하세요.seoul에 "Kim"은 오직 한 번만 나타나며 잘못된 값이 입력되는 경우는 없습니다.
+
+    //제한 사항
+    //seoul은 길이 1 이상, 1000 이하인 배열입니다.
+    //seoul의 원소는 길이 1 이상, 20 이하인 문자열입니다.
+    //"Kim"은 반드시 seoul 안에 포함되어 있습니다.
+
+    public class Solution
+    {
+        // solution 함수 정의
+        public string solution(string[] seoul)
+        {
+            // 반환할 결과 문자열을 초기화
+            string answer = "";
+
+            // 문자열 배열을 반복하여 "Kim"이 있는지 확인
+            for (int i = 0; i < seoul.Length; i++)
+            {
+                // 만약 해당 문자열이 "Kim"이면
+                if (seoul[i] == "Kim")
+                {
+                    // 결과 문자열을 설정하고 반복문을 종료
+                    answer = "김서방은 " + i + "에 있다";
+                    break;
+                }
+            }
+            // 결과 반환
+            return answer;
+        }
+    }
