@@ -1,4 +1,5 @@
 ﻿using System;
+using static Solution;
 
 // 두 수의 차
 public class Solution
@@ -610,3 +611,53 @@ public class Solution
             return answer;
         }
     }
+
+
+
+    // 나누어 떨어지는 숫자 배열
+
+
+
+//    문제 설명
+//array의 각 element 중 divisor로 나누어 떨어지는 값을 오름차순으로 정렬한 배열을 반환하는 함수, solution을 작성해주세요.
+//divisor로 나누어 떨어지는 element가 하나도 없다면 배열에 -1을 담아 반환하세요.
+
+//제한사항
+//arr은 자연수를 담은 배열입니다.
+//정수 i, j에 대해 i ≠ j 이면 arr[i] ≠ arr[j] 입니다.
+//divisor는 자연수입니다.
+//array는 길이 1 이상인 배열입니다.
+
+
+    using System.Collections.Generic;
+
+public class Solution
+{
+    // 주어진 배열(arr)에서 divisor로 나누어 떨어지는 숫자들을 찾아 반환합니다.
+    public int[] solution(int[] arr, int divisor)
+    {
+        // 결과를 저장할 리스트 생성
+        List<int> result = new List<int>();
+
+        // 배열을 순회하면서 나누어 떨어지는 숫자를 찾아 결과 리스트에 추가
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] % divisor == 0)
+            {
+                result.Add(arr[i]);
+            }
+        }
+
+        // 결과 리스트가 비어있으면 -1을 담은 배열을 반환
+        if (result.Count == 0)
+        {
+            return new int[] { -1 };
+        }
+
+        // 결과 리스트를 정렬
+        result.Sort();
+
+        // 정렬된 결과를 배열로 변환하여 반환
+        return result.ToArray();
+    }
+}
