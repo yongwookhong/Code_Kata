@@ -661,3 +661,50 @@ public class Solution
         return result.ToArray();
     }
 }
+
+
+
+//# 음양 더하기
+
+
+//## 문제 설명
+
+//int형 배열(absolutes)이 있고 이 int형 배열(absolutes)의 길이만큼 bool형 배열(signs)이 있습니다.
+
+//signs[i] 가 true면 absolutes[i] 은 양수, false면 absolutes[i] 은 음수입니다.
+
+//부호에 맞게 absolutes의 합을 구해서 반환하는 문제입니다.
+
+//## 문제 풀이
+
+//absolutes와 signs의 길이는 동일하니 반복문을 돌리면 풀 수 있습니다.
+
+//signs[i] 가 true면 answer에 absolutes[i] 를 더하고,
+//signs[i]가 false면 answer에 absolutes[i] 를 빼면
+
+//부호에 맞는 absolutes의 합을 구할 수 있습니다.
+
+
+
+using System;
+
+public class Solution
+{
+    // 주어진 정수 배열 absolutes와 부울 배열 signs를 받아서
+    // 절댓값을 구하고, signs 배열에 따라 부호를 적용하여 결과를 반환하는 함수
+    public int solution(int[] absolutes, bool[] signs)
+    {
+        int answer = 0; // 결과 값을 저장할 변수
+
+        // absolutes 배열의 각 원소를 반복하여 처리
+        for (int i = 0; i < absolutes.Length; i++)
+        {
+            // signs[i]가 참(true)인 경우 해당 원소 그대로 더함
+            // signs[i]가 거짓(false)인 경우 해당 원소에 -1을 곱해서 음수로 변환하여 더함
+            answer += absolutes[i] = signs[i] ? absolutes[i] : absolutes[i] * -1;
+        }
+
+        // 최종 결과 반환
+        return answer;
+    }
+}
