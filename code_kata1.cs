@@ -707,4 +707,40 @@ public class Solution
         // 최종 결과 반환
         return answer;
     }
+
+
+}
+
+//핸드폰 번호 가리기
+
+//문제 설명
+//프로그래머스 모바일은 개인정보 보호를 위해 고지서를 보낼 때 고객들의 전화번호의 일부를 가립니다.
+//전화번호가 문자열 phone_number로 주어졌을 때, 전화번호의 뒷 4자리를 제외한 나머지 숫자를 전부 *으로 가린 문자열을 리턴하는 함수, solution을 완성해주세요.
+
+//제한 조건
+//phone_number는 길이 4 이상, 20이하인 문자열입니다.
+
+public class Solution
+{
+    // solution 메서드는 문자열 phone_number를 받아들여서 해당 문자열을 가공하여 반환
+    public string solution(string phone_number)
+    {
+        // 결과를 저장할 문자열 변수를 초기화
+        string answer = "";
+
+        // 맨 뒤의 4자리를 추출하여 temp_str에 저장
+        string temp_str = phone_number.Substring(phone_number.Length - 4, 4);
+
+        // 전화번호에서 맨 뒤의 4자리를 제외한 앞부분에 '*'를 추가하여 answer에 저장
+        for (int i = 0; i < phone_number.Length - 4; ++i)
+        {
+            answer += "*";
+        }
+
+        // 앞부분에 '*'로 가려진 전화번호와 추출한 마지막 4자리를 합쳐 최종 결과를 만듦
+        answer += temp_str;
+
+        // 가공된 전화번호를 반환
+        return answer;
+    }
 }
