@@ -744,3 +744,39 @@ public class Solution
         return answer;
     }
 }
+
+
+
+
+// C# 없는 숫자 더하기
+
+//문제 설명
+//제한사항
+//풀이
+//문제 설명
+//0부터 9까지의 숫자 중 일부가 들어있는 정수 배열 numbers가 매개변수로 주어집니다. numbers에서 찾을 수 없는 0부터 9까지의 숫자를 모두 찾아 더한 수를 return 하도록 solution 함수를 완성해주세요.
+
+//제한사항
+//1 ≤ numbers의 길이 ≤ 9
+//0 ≤ numbers의 모든 원소 ≤ 9
+//numbers의 모든 원소는 서로 다릅니다.
+
+
+using System; // C# 표준 라이브러리를 사용하기 위한 선언
+using System.Linq; // LINQ 기능을 사용하기 위한 선언
+
+public class Solution // Solution 클래스 정의
+{
+    public int solution(int[] numbers) // solution 메서드 정의, int 배열을 입력으로 받고 정수를 반환
+    {
+        int answer = 0; // 정수형 변수 answer를 선언하고 0으로 초기화
+        // 0부터 9까지의 숫자의 합을 answer에 더함
+        for (int i = 0; i <= 9; i++)
+        {
+            answer += i;
+        }
+        // numbers 배열의 모든 요소의 합을 answer에서 빼기
+        answer -= numbers.Sum();
+        return answer; // 결과 반환
+    }
+}
