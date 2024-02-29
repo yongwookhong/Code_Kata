@@ -780,3 +780,42 @@ public class Solution // Solution 클래스 정의
         return answer; // 결과 반환
     }
 }
+
+
+
+
+
+// 제일 작은수 제거하기
+//문제 설명
+//정수를 저장한 배열, arr 에서 가장 작은 수를 제거한 배열을 리턴하는 함수, solution을 완성해주세요. 단, 리턴하려는 배열이 빈 배열인 경우엔 배열에 -1을 채워 리턴하세요. 예를들어 arr이 [4,3,2,1] 인 경우는[4, 3, 2]를 리턴 하고, [10]면 [-1] 을 리턴 합니다.
+
+//제한 조건
+//arr은 길이 1 이상인 배열입니다.
+//인덱스 i, j에 대해 i ≠ j이면 arr[i] ≠ arr[j] 입니다.
+
+
+using System.Collections.Generic;
+using System.Linq;
+
+public class Solution
+{
+    public int[] solution(int[] arr)
+    {
+        // 주어진 배열을 리스트로 변환
+        List<int> arr_list = new List<int>(arr);
+
+        // 배열에서 최솟값을 찾기
+        int min = arr.Min();
+
+        // 리스트에서 최솟값을 모두 제거
+        arr_list.RemoveAll(num => num == min);
+
+        // 리스트가 비어있다면, 최솟값만으로 구성된 배열을 반환하기 위해 -1을 추가
+        if (arr_list.Count == 0)
+        {
+            arr_list.Add(-1);
+        }
+        // 최종적으로 리스트를 배열로 변환하여 반환
+        return arr_list.ToArray();
+    }
+}
