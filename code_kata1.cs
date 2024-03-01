@@ -1,6 +1,9 @@
 ﻿using System;
 using static Solution;
 
+//코드카타 코드들의 모음 그냥 여기에 붙이고 있음 하나의 메모장처럼.. ㅋㅋ
+
+
 // 두 수의 차
 public class Solution
 {
@@ -817,5 +820,26 @@ public class Solution
         }
         // 최종적으로 리스트를 배열로 변환하여 반환
         return arr_list.ToArray();
+    }
+}
+
+
+ //가운데 글자 가져오기
+//문제 설명
+//단어 s의 가운데 글자를 반환하는 함수, solution을 만들어 보세요. 단어의 길이가 짝수라면 가운데 두글자를 반환하면 됩니다.
+
+//제한사항
+//s는 길이가 1 이상, 100이하인 스트링입니다.
+
+
+public class Solution
+{
+    public string solution(string s)
+    {
+        int num2 = (s.Length + 1) % 2;
+        // 주어진 문자열의 길이에 1을 더한 후 2로 나눈 나머지를 계산하여 홀수/짝수 여부를 판단
+        int num1 = (s.Length / 2) - num2; // 가운데 글자의 시작 인덱스를 계산
+
+        return s.Substring(num1, 1 + num2); // 가운데 글자(들)를 반환
     }
 }
