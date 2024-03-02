@@ -843,3 +843,37 @@ public class Solution
         return s.Substring(num1, 1 + num2); // 가운데 글자(들)를 반환
     }
 }
+
+
+//수박수박수박수?
+
+//문제 설명
+//길이가 n이고, "수박수박수박수...."와 같은 패턴을 유지하는 문자열을 리턴하는 함수, solution을 완성하세요. 예를들어 n이 4이면 "수박수박"을 리턴하고 3이라면 "수박수"를 리턴하면 됩니다.
+
+//제한 사항
+//n은 길이 10,000이하인 자연수입니다.
+
+//코드풀이
+
+
+public class Solution
+{
+    // solution 메서드: 정수 n을 입력으로 받아 "수박" 패턴의 문자열을 반환합니다.
+    public string solution(int n)
+    {
+        // 결과 문자열을 저장할 변수 초기화
+        string answer = "";
+        // "수"와 "박" 문자를 배열에 저장
+        char[] watermelon = { '수', '박' };
+
+        // n번 반복하면서 문자열 생성
+        for (int i = 0; i < n; i++)
+        {
+            // 인덱스 i를 2로 나눈 나머지를 사용하여 "수"와 "박"을 번갈아가며 추가
+            answer += watermelon[i % 2];
+        }
+
+        // 결과 문자열 반환
+        return answer;
+    }
+}
