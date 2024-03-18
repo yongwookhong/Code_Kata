@@ -910,3 +910,36 @@ public class Solution
         return answer;
     }
 }
+
+
+
+
+//문제 설명
+//두 정수 left와 right가 매개변수로 주어집니다. left부터 right까지의 모든 수들 중에서, 약수의 개수가 짝수인 수는 더하고, 약수의 개수가 홀수인 수는 뺀 수를 return 하도록 solution 함수를 완성해주세요.
+
+//제한사항
+//1 ≤ left ≤ right ≤ 1,000
+
+
+
+
+using System;
+
+public class Solution
+{
+    public int solution(int left, int right)
+    {
+        int answer = 0;
+        // left부터 right까지 모든 정수에 대해 반복합니다.
+        for (int i = left; i <= right; i++)
+        {
+            int cnt = 0; // i의 약수의 개수를 저장할 변수입니다.
+            // 1부터 i까지 모든 수에 대해 반복하여 i의 약수를 찾습니다.
+            for (int j = 1; j <= i; j++) { if (i % j == 0) { cnt++; } } // i를 j로 나누어 떨어지면(약수면) cnt를 1 증가시킵니다.
+            // 약수의 개수(cnt)가 짝수인 경우 answer에 i를 더하고, 홀수인 경우 answer에서 i를 뺍니다.
+            if (cnt % 2 == 0) { answer += i; }
+            else { answer -= i; }
+        }
+        return answer; // 최종 계산된 answer 값을 반환합니다.
+    }
+}
